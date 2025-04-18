@@ -1,4 +1,4 @@
-package com.example.qm_flutter_proxy
+package com.tong.qm_flutter_proxy
 
 import androidx.annotation.NonNull
 

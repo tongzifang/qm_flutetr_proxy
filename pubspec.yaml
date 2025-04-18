@@ -1,7 +1,8 @@
 name: qm_flutter_proxy
 description: "A new Flutter project."
 version: 0.0.1
-homepage:
+homepage: https://github.com/tongzifang
+repository: https://github.com/tongzifang/qm_flutetr_proxy
 
 environment:
   sdk: ^3.6.0

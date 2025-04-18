@@ -1,4 +1,4 @@
-group = "com.example.qm_flutter_proxy"
+group = "com.tong.qm_flutter_proxy"
 version = "1.0-SNAPSHOT"
 
 buildscript {
@@ -25,7 +25,7 @@ apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
 
 android {
-    namespace = "com.example.qm_flutter_proxy"
+    namespace = "com.tong.qm_flutter_proxy"
 
     compileSdk = 35
 
