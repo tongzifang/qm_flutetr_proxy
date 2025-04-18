@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:qm_flutter_proxy/http_proxy.dart';
+import 'package:qm_flutter_proxy/qm_flutter_proxy.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
