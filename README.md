@@ -1,4 +1,4 @@
-# qm_flutetr_proxy
+# qm_flutter_proxy
 
 This plugin comes from the plugin http_proxy, only the Android part has been upgraded. It can automatically get the proxy settings of mobile devices and set the proxy for dio.
 
@@ -10,18 +10,24 @@ This plugin comes from the plugin http_proxy, only the Android part has been upg
 
 ```
 HttpProxy httpProxy = await HttpProxy.createHttpProxy();
-  var proxyHost = httpProxy.host;
-  var proxyPort = httpProxy.port;
-  if (proxyHost == null) return;
-  (dio.httpClientAdapter as IOHttpClientAdapter).createHttpClient = () {
-    final HttpClient client =
-    HttpClient(context: SecurityContext(withTrustedRoots: false));
-    client.findProxy = (uri) => "PROXY $proxyHost:$proxyPort";
-    client.badCertificateCallback =
-        (X509Certificate cert, String host, int port) => true;
-    return client;
-  };
+    var proxyHost = httpProxy.host;
+    var proxyPort = httpProxy.port;
+    if (proxyHost == null) return;
+    dio.httpClientAdapter = IOHttpClientAdapter(
+      createHttpClient: () {
+        final client = HttpClient();
+        client.findProxy = (uri) {
+          return "PROXY $proxyHost:$proxyPort";
+        };
+        client.badCertificateCallback =
+            (X509Certificate cert, String host, int port) {
+          return true;
+        };
+        return client;
+      },
+    );
 ```
+
 
 **2.Dio not used**
 
@@ -34,5 +40,4 @@ void main() async {
     HttpOverrides.global=httpProxy;
     runApp(MyApp());
   }
-
 ```
