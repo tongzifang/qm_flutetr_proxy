@@ -1,6 +1,6 @@
 name: qm_flutter_proxy
 description: "http proxy plugin,get and set http proxy automatically.This package help you to use proxy tools"
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/tongzifang
 repository: https://github.com/tongzifang/qm_flutetr_proxy
 
